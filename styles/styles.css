@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&family=Ubuntu:wght@500&display=swap');
+
+/* 1----------- ESTILOS PARA PAGINA INICIO*/
+
+/*Tamaño mas grande superior a 1000 px*/ 
+body {font-family: 'lato', 'ubuntu', sans-serif;
+        font-size: 100%}
+
+        /* definiendo propiedades del menu de navegación */
+        a.link_nav {color: #061bb0; font-size: 1.25rem; 
+        font-weight: bold;  text-decoration-line: none;
+        background-color:white;padding:0.5rem 1rem ;}
+a.link_nav:hover {color:white; background-color: #061bb0;}
+/* Definiendo el tamaño del Logo SIGMA en el header */ 
+#logo_sigma {height: 5rem;}
+
+/* definiendo el Grid contenedor */
+#container_grid {display: grid;
+grid-template-columns: 1fr; 
+grid-template-rows: 6rem 1fr 20rem 8rem;
+grid-template-areas: 
+"header"
+"cuerpo1"
+"cuerpo2" 
+"footer";}
+
+/* Definiendo propiedades de los Grids Hijos */ 
+ .item_grid {display: flex; align-items: center; justify-content: space-around; } 
+ #header {background-color: white; grid-area: header;position: fixed; 
+        left: 0px; right: 0px; top: 0px; z-index: 5; border-bottom: 1.5px solid #061bb0;
+        padding-bottom: 1rem ;}
+
+#cuerpo1 {grid-area: cuerpo1; display:block}       
+#cuerpo2 {grid-area: cuerpo2; display:block; }
+#footer {grid-area:  footer}
+
+
+/* Imagenes de recipientes con TRANSICIÓN*/
+.slide_container {display: flex; justify-content: center;margin-top: 1rem; 
+        margin-bottom: 1rem;}
+.slide {height: 25rem;} 
+#slide1{opacity:1; z-index: 1; transition: opacity 1s; 
+        }
+#slide2 {position: absolute; z-index:0}
+#slide1:hover {opacity: 0;}
+
+.empresa {background-color:#e6e8f7; padding:1rem 10%}
+/* Titulos H1 */
+h1 {font-family: 'roboto' sans-serif; font-size: 2rem; text-align: left; font-size: bold;
+        padding: 1rem 0rem;  }
+
+/* Parrafos*/
+p {text-align: justify; font-size: 1.25rem; }
+/* Carousel Clientes*/
+#cuerpo2 {padding:1rem 10%}
+#carouselExampleControls {margin-top: 2rem; height: 3rem; width: 100%;}
+.carousel-item img {height: 3rem; width:auto; margin-right: 1rem; margin-left: 1rem;}
+.clientes-media-tablet {display: none;}
+
+/* footer*/
+footer{background-color: #061bb0;}
+footer i {color: white;font-size: 2rem;} 
+.redes_sociales {width: 25%;margin-left:1rem ; display: flex; justify-content: space-evenly;}
+.redes_sociales i:hover {transform: scale(2,2); }
+
+.texto-footer {width: 50%;color:white; text-align: center;}
+
+.contactos {width: 25%;display: flex; flex-direction: column; justify-content: center;}
+.contactos div {display: flex; justify-content: space-around;}
+.contactos div>a{color: white;}
+
+.contactos i:hover, .contactos a:hover  {transform: scale(1.25,1.25); }
+#boton_contactenos {color: #061bb0; font-size: 1rem; 
+        font-weight: bold;  text-decoration-line: none;
+        background-color:white;padding:0.25rem 1rem; border-radius:0.25rem; 
+       justify-self:initial; }
+#boton_contactenos:hover {transform: scale(1.4,1.05) ;}
+
+
+/* Media query para tamaño mediano*/
+@media screen and (max-width: 1000px) {
+            /* definiendo propiedades del menu de navegación */
+            a.link_nav {color: #061bb0; font-size: 1.25rem; 
+                font-weight: bold;  text-decoration-line: none;
+                background-color:white;padding:0.5rem 1rem ;}
+        a.link_nav:hover {color:white; background-color: #061bb0;}
+        /* Definiendo el tamaño del Logo SIGMA en el header */ 
+        #logo_sigma {height: 3rem;}
+
+        #container_grid {display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 6rem 1fr 40rem 8rem;
+                grid-template-areas: 
+                "header"
+                "cuerpo1"
+                "cuerpo2" 
+                "footer";} 
+        /* Imagenes de recipientes con TRANSICIÓN*/
+        .slide_container {display: flex; justify-content: center;margin-top: .5rem; 
+        margin-bottom: .5rem; }
+        .slide {width: 85%; height: 20rem;}
+        #slide1{opacity:1; z-index: 1; transition: opacity 1s; 
+        }
+        #slide2 { position: absolute; z-index:0}
+        #slide1:hover {opacity: 0;}
+        /* Carousel Clientes*/
+        #cuerpo2 {padding:1rem 0%;}
+        #cuerpo2 h1, #cuerpo2 p {padding-left: 10%;}
+        #carouselExampleControls {display: none;}
+        .clientes-media-tablet {display: grid;
+                grid-template-columns: auto auto auto ;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                justify-items: center;
+                row-gap: 2rem;
+                column-gap: 1rem;
+                grid-template-areas: 
+                "tgs anglo tecpetrol" 
+                "shell total inelectra" 
+                "techint enel plupetrol" 
+                "pampa quilmes ternium"
+                "aesa veolia ypf"
+                "pae puma air"
+              
+        }
+        .clientes-media-tablet img {height: 3rem;}
+        .clientes-media-tablet img[alt~="aesa"] {grid-area: aesa;}
+        .clientes-media-tablet img[alt~="anglo"] {grid-area: anglo;}
+        .clientes-media-tablet img[alt~="tecpetrol"] {grid-area: tecpetrol;}
+        .clientes-media-tablet img[alt~="pae"] {grid-area: pae;}
+        .clientes-media-tablet img[alt~="shell"] {grid-area: shell;}
+        .clientes-media-tablet img[alt~="total"] {grid-area: total;}
+        .clientes-media-tablet img[alt~="ypf"] {grid-area: ypf;}
+        .clientes-media-tablet img[alt~="pampa"] {grid-area: pampa;}
+        .clientes-media-tablet img[alt~="puma"] {grid-area: puma;}
+        .clientes-media-tablet img[alt~="ternium"] {grid-area: ternium;}
+        .clientes-media-tablet img[alt~="techint"] {grid-area: techint;}
+        .clientes-media-tablet img[alt~="enel"] {grid-area: enel;}
+        .clientes-media-tablet img[alt~="air"] {grid-area: air;}
+        .clientes-media-tablet img[alt~="plupetrol"] {grid-area: pluepetrol;}
+        .clientes-media-tablet img[alt~="quilmes"] {grid-area: quilmes;}
+        .clientes-media-tablet img[alt~="tgs"] {grid-area: tgs;}
+        .clientes-media-tablet img[alt~="inelectra"] {grid-area: inelectra;}
+        .clientes-media-tablet img[alt~="veolia"] {grid-area: veolia;}
+/* footer*/
+footer i {color: white;font-size: 2rem;} 
+.redes_sociales {width: 40%;margin-left:.5rem ; display: flex; justify-content: space-evenly;}
+.redes_sociales i:hover {transform: scale(1.5,1.5); }
+
+.texto-footer {width: 20;}
+.texto-footer>div:not(:first-child) {display: none;}
+.contactos {width: 40%;}
+#boton_contactenos:hover {transform: scale(1.25,1.05) ;}
+}
+
+
+/* Media query para tamaños mas pequeños*/
+@media screen and (max-width: 700px) {
+        /* definiendo propiedades del menu de navegación */
+       #menu {display: flex; flex-direction: column;}
+        a.link_nav {color: #061bb0; font-size: 1.25rem; 
+            font-weight: bold;  text-decoration-line: none;
+            background-color:white;padding:0.5rem 1rem }
+    a.link_nav:hover {color:white; background-color: #061bb0;}
+    #header {margin-bottom: 0rem;}
+    /* Definiendo el tamaño del Logo SIGMA en el header */ 
+    #logo_sigma {height: 5rem;}
+
+    #container_grid {display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 5rem 1fr 65rem 15rem;
+            grid-template-areas: 
+            "header"
+            "cuerpo1"
+            "cuerpo2" 
+            "footer";} 
+    /* Imagenes de recipientes con TRANSICIÓN*/
+   #cuerpo1{margin: 0rem;}
+    .slide_container {display: flex; justify-content: center; align-items:center;
+        margin-bottom:0rem; height:29.5rem}
+    .slide {width:100%; margin: 0rem;padding: 0rem;}
+   .empresa {margin-top: 0rem; padding: 1rem 10%;}
+   .empresa h1 {margin-top: 0rem;}
+    /* Clientes*/
+    #cuerpo2 {padding:1rem 0%;}
+    #cuerpo2 h1, #cuerpo2 p {padding-left: 10%;}
+    #carouselExampleControls {display: none;}
+    .clientes-media-tablet {display: grid;
+            grid-template-columns: auto auto ;
+            grid-template-rows: repeat(9, 1fr);
+            justify-items: center;
+            row-gap: 2rem;
+            grid-template-areas: 
+            "tgs anglo" 
+            "shell total" 
+            "techint enel" 
+            "quilmes ternium"
+            "aesa ypf"
+            "puma air"
+            "tecpetrol inelectra"
+            "plupetrol pampa"
+            "veolia pae"
+          
+    }
+    .clientes-media-tablet img {height: 4rem;}
+    .clientes-media-tablet img[alt~="aesa"] {grid-area: aesa;}
+    .clientes-media-tablet img[alt~="anglo"] {grid-area: anglo;}
+    .clientes-media-tablet img[alt~="tecpetrol"] {grid-area: tecpetrol;}
+    .clientes-media-tablet img[alt~="pae"] {grid-area: pae;}
+    .clientes-media-tablet img[alt~="shell"] {grid-area: shell;}
+    .clientes-media-tablet img[alt~="total"] {grid-area: total;}
+    .clientes-media-tablet img[alt~="ypf"] {grid-area: ypf;}
+    .clientes-media-tablet img[alt~="pampa"] {grid-area: pampa;}
+    .clientes-media-tablet img[alt~="puma"] {grid-area: puma;}
+    .clientes-media-tablet img[alt~="ternium"] {grid-area: ternium;}
+    .clientes-media-tablet img[alt~="techint"] {grid-area: techint;}
+    .clientes-media-tablet img[alt~="enel"] {grid-area: enel;}
+    .clientes-media-tablet img[alt~="air"] {grid-area: air;}
+    .clientes-media-tablet img[alt~="plupetrol"] {grid-area: pluepetrol;}
+    .clientes-media-tablet img[alt~="quilmes"] {grid-area: quilmes;}
+    .clientes-media-tablet img[alt~="tgs"] {grid-area: tgs;}
+    .clientes-media-tablet img[alt~="inelectra"] {grid-area: inelectra;}
+    .clientes-media-tablet img[alt~="veolia"] {grid-area: veolia;}
+/* footer*/
+#footer {display: flex; flex-direction: column;}
+footer i {color: white;font-size: 3rem;} 
+.redes_sociales {width: 100%;margin-left:.5rem ; display: flex; justify-content: space-evenly;}
+.redes_sociales i:hover {transform: scale(1.5,1.5); }
+
+.texto-footer {width: 100%;font-size: 1.5rem;}
+.texto-footer>div:not(:first-child) {display: none;}
+.contactos {width: 100%;display: flex; flex-direction: row;justify-content: space-around;}
+.contactos>div {display: flex; justify-content: space-around; width:75%}
+#boton_contactenos:hover {transform: scale(1.25,1.05) ;}
+}
+
+
+
+
+/* 2----------- ESTILOS PARA PAGINA INICIO*/
+.contactenos-page #container_grid {display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 6rem 20rem 38rem 8rem;
+        justify-items: center;
+        grid-template-areas: 
+        "header"
+        "cuerpo-contactenos"
+        "area-formulario"
+        "footer"
+        ;} 
+#cuerpo-contactenos {grid-area: cuerpo-contactenos; width: 100%; 
+        box-sizing:border-box ;}
+ 
+#cuerpo-contactenos span {font-size: 1.25rem;}
+#cuerpo-contactenos h1 {padding: .5rem 5%; margin-bottom: 1rem; margin-top: 1rem;}
+
+#cuerpo-contactenos i {font-size: 3rem;}
+#cuerpo-contactenos address {padding: 0 5%}
+#cuerpo-contactenos iframe {height: 18rem; width: 22rem;}
+.contactenos-page footer {width: 100%;}
+address {display: grid;
+grid-template-columns: 60% 40%;
+grid-template-rows: 6rem 6rem 6rem;
+justify-items: flex-start;
+align-content: center;
+grid-template-areas: 
+"direccion iframe"
+"telefono iframe"
+"email iframe";}
+#direccion {grid-area: direccion;}
+#telefono {grid-area: telefono;}
+#email {grid-area: email;}
+iframe {grid-area: iframe; justify-self: center; }
+form { margin: 0 5%;}
+#area-formulario{ grid-area: area-formulario; background-color: #e6e8f7; padding: 5% 0;}
+.btn {background-color:#061bb0; border-color: #061bb0;}
+
+#cuerpo-contactenos, #area-formulario {animation-name: aparecer;
+        animation-duration: 2s; animation-delay:0s;}
+/* Definicion de la animación que se realiza a toda el cuerpo interior*/
+@keyframes aparecer{
+        0% {opacity: 0;}
+        20% {opacity: 0.1}
+        40% {opacity: 0.2;} 
+        60% {opacity: 0.4;}
+        80% {opacity: 0.8;}
+        100% {opacity: 1;}
+}
+
+
+/*Media query para tamaño mediano*/
+@media screen and (max-width: 1000px) {
+        .contactenos-page #container_grid {display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-rows: 5rem 41rem 36rem 8rem;
+                justify-items: center;
+                grid-template-areas: 
+                "header"
+                "cuerpo-contactenos"
+                "area-formulario"
+                "footer";} 
+      
+      
+        address {display: grid;
+        grid-template-columns: 100%;
+grid-template-rows: 5rem 5rem 5rem 1fr;
+justify-items: flex-start;
+align-content: center;
+grid-template-areas: 
+"direccion"
+"telefono"
+"email" 
+"iframe";}
+#cuerpo-contactenos iframe {height: 18rem; width: 100%;}
+#area-formulario {height: 100%;}
+}
+/*Media query para tamaño pequeño*/
+@media screen and (max-width: 700px) {
+        .contactenos-page #container_grid {display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-rows: 10rem 41rem 34rem 15rem;
+                justify-items: center;
+                grid-template-areas: 
+                "header"
+                "cuerpo-contactenos"
+                "area-formulario"
+                "footer";} 
+      
+      #cuerpo-contactenos {margin: 0%; padding:0% ;}
+      .contactenos-page #header {margin-bottom: 0%;}
+        address {display: grid;
+        grid-template-columns: 100%;
+grid-template-rows: 5rem 5rem 5rem 1fr;
+justify-items: flex-start;
+align-content: center;
+grid-template-areas: 
+"direccion"
+"telefono"
+"email" 
+"iframe";}
+#cuerpo-contactenos iframe {height: 18rem; width: 100%;}
+
+}
+
+
+/* 3-------- ESTILOS PARA SERVICIOS*/
+
+.nuestros-servicios-page #container_grid {width: 100%; display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 6rem 1fr 8rem;
+        justify-items: center;
+        grid-template-areas: 
+        "header"
+        "servicios"
+        "footer"
+        ;} 
+        #servicios {grid-area: servicios; margin-top: 0rem;}
+        #servicios h1 {margin-left: 5%;}
+        .serv-fila {display: flex; flex-direction: row;}
+section article {width: 50%; height:calc(); margin: 1rem .5rem;border: 1px solid black;
+box-sizing: border-box;}
+section article:hover {border: 2px solid #061bb0; background-color: #e6e8f7;}
+article img {width: 100%;height: 20rem;}
+.serv-fila h2 {text-align: center;}
+.serv-fila p {text-align: justify;margin-left: .5rem; margin-right: .5rem;}
+
+
+
+/* footer*/
+
+.nuestros-servicios-page footer{width: 100%; height: 100%; grid-area: footer; margin:0%}
+
+/*Tamaño mediano*/ 
+@media screen and (max-width: 1000px) {
+
+        .serv-fila {display: flex; flex-direction: column;}
+        section article {width: 100%; height:calc(); margin: 1rem .5rem;border: 1px solid black;}
+}
+
+/* tamaño pequeño*/
+@media screen and (max-width: 700px) {
+
+ .nuestros-servicios-page footer {height: 15rem; }
+ #boton_contactenos {text-align: center; vertical-align: center; padding-top: .75rem; ;}
+}
